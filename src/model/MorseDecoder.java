@@ -86,40 +86,37 @@ public class MorseDecoder {
 
 
 
-  public void decode(String code) {
-    //System.out.println(decodeMsg(decodeTree, code));
-    decodeMsg(decodeTree,code);
-    
+  public char decode(String code) {
+    // System.out.println(decodeMsg(decodeTree, code));
+    return decodeMsg(decodeTree, code);
+
   }
 
 
-  public char decodeMsg(BinaryTree <Character> m, String morseCode) {
-   
-    // Base case for dot
+  public char decodeMsg(BinaryTree<Character> m, String morseCode) {
 
-int counter = 1;
+    // Base case for dot
     if (morseCode.equals(".")) {
-      BinaryTree<Character> n = new BinaryTree<Character>(charToPlace);
-      setTheReturn(decodeTree.getLeft().getRootElement());
-      System.out.println(decodeTree.getLeft().getRootElement());
+ 
+      setTheReturn(m.getLeft().getRootElement());
+      //System.out.println(decodeTree.getLeft().getRootElement());
     } else if (morseCode.equals("-")) {
-      BinaryTree<Character> n = new BinaryTree<Character>();
-      setTheReturn(decodeTree.getRight().getRootElement());
-      System.out.println(decodeTree.getRight().getRootElement());
+      //BinaryTree<Character> n = new BinaryTree<Character>();
+      setTheReturn(m.getRight().getRootElement());
+      //System.out.println(decodeTree.getRight().getRootElement());
     } else {
       char letterInCode = morseCode.charAt(0);
-      
+
       morseCode = morseCode.substring(1);
-      System.out.println(morseCode);
+      //System.out.println(morseCode);
       if (letterInCode == '.') {
-        decodeMsg(m.getLeft(),morseCode);
-      }
-      else {
+        decodeMsg(m.getLeft(), morseCode);
+      } else {
         decodeMsg(m.getRight(), morseCode);
       }
 
     }
-    
+
     return getTheReturn();
 
   }
