@@ -6,11 +6,18 @@ import java.util.Scanner;
 import model.MorseMessageDecoder;
 import model.MorseMessageEncoder;
 
-
+/**
+ * Main entry point into Assignment 4
+ * @authors Ethan Koop and Christopher Nottingham
+ *
+ */
 public class MCodeApp {
   /**
-   * Give a brief description of what main does
-   * 
+   * This is the main entry point for the user.
+   * It gives the user a choice to either:
+   * Decode a Morse code message into English, or
+   * Encode an English message into Morse Code.
+   * The scanner then reads the users input, and either encodes or decodes the message, depending on their choice. 
    * @throws FileNotFoundException
    */
   public static void main(String args[]) throws FileNotFoundException {

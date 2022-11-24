@@ -6,6 +6,13 @@ import java.io.FileNotFoundException;
 
 import java.util.Iterator;
 
+/**
+ * This class is intended to take morse code and convert it to readable English.
+ * 
+ * 
+ * @author Christopher Nottingham
+ *
+ */
 public class MorseDecoder {
 
   private final String DB_PATH = "res/codes.txt";
@@ -19,6 +26,11 @@ public class MorseDecoder {
 
   private char theReturn;
 
+  /**
+   * The main constructor that builds fills the objects and creates a tree
+   * 
+   * @throws FileNotFoundException
+   */
   public MorseDecoder() throws FileNotFoundException {
     DB = new File(DB_PATH);
     in = new Scanner(DB);
@@ -28,7 +40,7 @@ public class MorseDecoder {
   }
 
   /**
-   * 
+   * Prints the tree using the in-order transversal with the help of the iterator method
    */
   public void print() {
     Iterator<Character> iterator = decodeTree.iterator();
@@ -37,6 +49,12 @@ public class MorseDecoder {
     }
   }
 
+  /**
+   * Fills the tree and recursively places alphabet characters in correct nodes
+   * 
+   * @param fileName The file with morse code
+   * @throws FileNotFoundException throws exeception if their is no such file in fileName
+   */
   public void build(String fileName) throws FileNotFoundException {
     Scanner in = new Scanner(new File(fileName));
     char letter;
@@ -85,30 +103,39 @@ public class MorseDecoder {
   }
 
 
-
+  /**
+   * Uses a string parameter and uses a recursive method to solve a return the the English
+   * translation of morse code.
+   * 
+   * @param code The morse code
+   * @return the English equivalent of a single morse symbol
+   */
   public char decode(String code) {
-    // System.out.println(decodeMsg(decodeTree, code));
     return decodeMsg(decodeTree, code);
-
   }
 
-
+  /**
+   * Traverse throught the tree to get the English letter equivalent
+   * @param m the morse tree
+   * @param morseCode the individual morse symbol
+   * @return the letter equivalent of the morseCode parameter
+   */
   public char decodeMsg(BinaryTree<Character> m, String morseCode) {
 
     // Base case for dot
     if (morseCode.equals(".")) {
- 
+
       setTheReturn(m.getLeft().getRootElement());
-      //System.out.println(decodeTree.getLeft().getRootElement());
+
     } else if (morseCode.equals("-")) {
-      //BinaryTree<Character> n = new BinaryTree<Character>();
+
       setTheReturn(m.getRight().getRootElement());
-      //System.out.println(decodeTree.getRight().getRootElement());
+
     } else {
       char letterInCode = morseCode.charAt(0);
 
       morseCode = morseCode.substring(1);
-      //System.out.println(morseCode);
+
       if (letterInCode == '.') {
         decodeMsg(m.getLeft(), morseCode);
       } else {
@@ -121,10 +148,18 @@ public class MorseDecoder {
 
   }
 
+  /**
+   * Getter method for the return variable 
+   * @return the variable assignment in char form
+   */
   public Character getTheReturn() {
     return theReturn;
   }
-
+  
+  /**
+   * Setter method for the return variable
+   * @param theReturn the new return
+   */
   public void setTheReturn(char theReturn) {
     this.theReturn = theReturn;
   }
