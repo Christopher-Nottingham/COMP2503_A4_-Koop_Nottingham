@@ -21,7 +21,6 @@ public class MorseDecoder {
 
   private Scanner in;
 
-
   private BinaryTree<Character> decodeTree;
 
   private char theReturn;
@@ -70,13 +69,13 @@ public class MorseDecoder {
   }
 
   /**
-   * Method decides where to place the letter in binary tree If it is a dot it goes to the left,
-   * else if it is a dash it goes to the right
+   * Method decides where to place the letter in binary tree. If it is a dot it goes to the left,
+   * else if it is a dash it goes to the right. This code is from Tutorial_11_16 but has been
+   * modified to correctly make Binary Morse Tree.
    * 
    * @param passingTree the subtree that will be used to decide where the letter goes
    * @param letter the alphabetic representation of morse code
-   * @param symbol the morse code This code is from Tutorial_11_16 but has been modified to
-   *        correctly make Binary Morse Tree
+   * @param symbol the morse code
    */
   public void letterPositioning(BinaryTree<Character> passingTree, char letter, String symbol) {
     // Base case for dot
@@ -99,7 +98,6 @@ public class MorseDecoder {
         letterPositioning(passingTree.getRight(), letter, symbol);
       }
     }
-
   }
 
 
@@ -115,14 +113,14 @@ public class MorseDecoder {
   }
 
   /**
-   * Traverse throught the tree to get the English letter equivalent
+   * Traverse throughout the tree to get the English letter equivalent
+   * 
    * @param m the morse tree
    * @param morseCode the individual morse symbol
    * @return the letter equivalent of the morseCode parameter
    */
   public char decodeMsg(BinaryTree<Character> m, String morseCode) {
 
-    // Base case for dot
     if (morseCode.equals(".")) {
 
       setTheReturn(m.getLeft().getRootElement());
@@ -143,21 +141,21 @@ public class MorseDecoder {
       }
 
     }
-
     return getTheReturn();
-
   }
 
   /**
-   * Getter method for the return variable 
+   * Getter method for the return variable
+   * 
    * @return the variable assignment in char form
    */
   public Character getTheReturn() {
     return theReturn;
   }
-  
+
   /**
    * Setter method for the return variable
+   * 
    * @param theReturn the new return
    */
   public void setTheReturn(char theReturn) {

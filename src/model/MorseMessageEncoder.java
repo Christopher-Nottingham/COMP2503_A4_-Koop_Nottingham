@@ -6,30 +6,14 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * This class is intended for encoding an english message to morse code
+ * This class is intended for encoding an English message to morse code
  * 
  * @author Ethan Koop
  *
  */
 public class MorseMessageEncoder {
   /**
-   * Constructor
-   * 
-   * @param message passed from the user
-   */
-  public MorseMessageEncoder(String message) {
-
-    
-  }
-    	
-    	
-    	
-    	
-
-
-
-  /**
-   * Reads the english message from the user, and returns the corresponding morse code
+   * Reads the English message from the user, and returns the corresponding morse code
    * 
    * @param message passed from the user
    * @return corresponding morse code

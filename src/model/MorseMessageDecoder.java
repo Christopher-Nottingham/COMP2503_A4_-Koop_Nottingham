@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 
 /**
  * This class intended to decode whole morse sentences
+ * 
  * @author Christopher Nottingham
  *
  */
@@ -26,11 +27,12 @@ public class MorseMessageDecoder {
     }
   }
 
-/**
- * Takes whole morse sentence and returns it in to  
- * @param message the morse sentence
- * @return English representation of the morse sentence
- */
+  /**
+   * Takes whole morse sentence and returns it in to
+   * 
+   * @param message the morse sentence
+   * @return English representation of the morse sentence
+   */
   public String decodeMessage(String message) {
     returningMsg = null;
     try {
@@ -40,7 +42,6 @@ public class MorseMessageDecoder {
       for (int i = 0; i < wordArray.length; i++) {
         String word = wordArray[i];
         String[] tempArrayOfLetters = word.split("   ");
-        // System.out.println(Arrays.toString(tempArray));
         for (int j = 0; j < tempArrayOfLetters.length; j++) {
           if (tempArrayOfLetters[i] == "") {
           } else {
