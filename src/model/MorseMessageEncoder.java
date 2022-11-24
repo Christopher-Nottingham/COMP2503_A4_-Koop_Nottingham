@@ -41,7 +41,7 @@ public class MorseMessageEncoder
     		for (char alphabetCharacter : message.toCharArray()) {
     			
     			int index = -1;
-    			String letter = " ";
+    			String letter = "";
     			
     				for (int i = 0; i < alphabet.length(); i++) {
     					if (alphabet.charAt(i) == alphabetCharacter) {
@@ -53,7 +53,7 @@ public class MorseMessageEncoder
     				letter = encode[index];
     			}
     			
-    			message += letter + " ";
+    			message += letter + "   ";
     			
     		}
     	

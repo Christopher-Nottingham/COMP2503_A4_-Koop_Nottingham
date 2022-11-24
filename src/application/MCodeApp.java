@@ -16,7 +16,7 @@ public class MCodeApp {
   public static void main(String args[]) throws FileNotFoundException {
     Scanner in = new Scanner(System.in);
     MorseMessageDecoder decoder = new MorseMessageDecoder();
-    MorseMessageEncoder encoder = new MorseMessageEncoder("");
+    MorseMessageEncoder encoder = new MorseMessageEncoder(" ");
     String message;
     char choice = ' ';
 
