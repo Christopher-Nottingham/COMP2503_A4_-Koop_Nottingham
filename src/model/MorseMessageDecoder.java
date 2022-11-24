@@ -39,7 +39,7 @@ public class MorseMessageDecoder {
       String wordArray[] = message.split("       ");
       for (int i = 0; i < wordArray.length; i++) {
         String word = wordArray[i];
-        String[] tempArrayOfLetters = word.split(" ");
+        String[] tempArrayOfLetters = word.split("   ");
         // System.out.println(Arrays.toString(tempArray));
         for (int j = 0; j < tempArrayOfLetters.length; j++) {
           if (tempArrayOfLetters[i] == "") {
