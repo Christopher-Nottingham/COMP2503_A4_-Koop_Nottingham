@@ -2,13 +2,20 @@ package model;
 
 import java.io.FileNotFoundException;
 
-
+/**
+ * This class intended to decode whole morse sentences
+ * @author Christopher Nottingham
+ *
+ */
 public class MorseMessageDecoder {
 
   private String returningMsg;
   private char decodedChar;
   private MorseDecoder morseDecoder;
 
+  /**
+   * Main constructor
+   */
   public MorseMessageDecoder() {
     try {
       morseDecoder = new MorseDecoder();
@@ -19,7 +26,11 @@ public class MorseMessageDecoder {
     }
   }
 
-
+/**
+ * Takes whole morse sentence and returns it in to  
+ * @param message the morse sentence
+ * @return English representation of the morse sentence
+ */
   public String decodeMessage(String message) {
     returningMsg = null;
     try {
